@@ -1,0 +1,322 @@
+body {
+background-color: #fff8f0;
+color: #333333;
+font-family: Arial, sans-serif;
+margin: 0;
+}
+
+.topbar {
+background-color: #f4d9d5;
+padding: 20px;
+text-align: center;
+}
+
+.logo {
+color: #333333;
+font-size: 22px;
+font-weight: bold;
+text-decoration: none;
+}
+
+.logo span, h1 span {
+ color: #d96f68;
+}
+
+.top-link {
+ color: #333333;
+ margin-left: 25px;
+}
+
+.hero, .add-section, .list-section, .inspiration {
+ width: 85%;
+ margin: 30px auto;
+ text-align: center;
+}
+
+.eyebrow, .photo-sticker {
+color: #d96f68;
+font-weight: bold;
+}
+
+h1 {
+font-size: 38px;
+}
+
+.hero-text, .section-heading p {
+ color: #666666;
+ line-height: 1.5;
+}
+
+.primary-link, .add-button {
+display: inline-block;
+background-color: #d96f68;
+color: white;
+padding: 12px 18px;
+text-decoration: none;
+border: none;
+}
+
+.hero-photo {
+margin-top: 25px;
+text-align: center;
+}
+
+.hero-photo img {
+    width: 85%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+    border-radius: 8px;
+}
+
+
+.stats-row {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #eaded8;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.stats-row > div {
+    
+    margin: 10px;
+}
+
+.stat-number {
+ font-size: 28px;
+font-weight: bold;
+ margin-bottom: 5px;
+}
+
+.stat-label, .progress-heading, .form-hint {
+ color: #777777;
+ font-size: 12px;
+}
+
+.progress-wrap {
+    flex-basis: 80%;
+    margin-top: 20px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 12px;
+    background-color: #eeeeee;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+.progress-fill {
+    background-color: #d96f68;
+    width: 0%;
+    height: 12px;
+    border-radius: 10px;
+}
+
+
+h2 {
+font-size: 28px;
+}
+
+.dream-form {
+background-color: #f8e8df;
+padding: 20px;
+margin-top: 25px;
+text-align: center;
+}
+
+.form-field {
+ margin: 12px;
+}
+
+.form-field label {
+ display: block;
+ font-size: 12px;
+ font-weight: bold;
+ margin-bottom: 8px;
+}
+
+.form-field input, .form-field select {
+ width: 80%;
+ padding: 10px;
+ border: 1px solid #cccccc;
+}
+
+.list-heading {
+text-align: center;
+margin-bottom: 20px;
+}
+
+.filters {
+margin-top: 15px;
+}
+
+.filter-button {
+background-color: white;
+color: #333333;
+border: 1px solid #cccccc;
+padding: 8px 12px;
+margin: 4px;
+}
+
+.filter-button.active {
+background-color: #333333;
+color: white;
+}
+
+.dream-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dream-card {
+    display: inline-block;
+    background-color: white;
+    width: 230px;
+    padding: 18px;
+    margin: 10px;
+    border: 1px solid #eaded8;
+    border-radius: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.dream-card:hover {
+    background-color: #fffaf5;
+}
+
+.category-tag {
+background-color: #dcebdc;
+padding: 5px 8px;
+font-size: 11px;
+}
+
+.category-Travel {
+background-color: #f8dcd8;
+}
+
+.category-Adventure {
+background-color: #dcebdc;
+}
+
+.category-Learn {
+background-color: #e8e1f5;
+}
+
+.category-Everyday {
+ background-color: #fff0c9;
+}
+
+.card-emoji {
+float: right;
+font-size: 20px;
+}
+
+.dream-card h3 {
+font-size: 18px;
+margin-top: 20px;
+}
+
+.card-actions {
+margin-top: 15px;
+}
+
+.card-actions button {
+ padding: 7px;
+ margin-right: 5px;
+ border: none;
+}
+
+.done-button {
+ background-color: #dcebdc;
+}
+
+.delete-button {
+ background-color: #f8dcd8;
+}
+
+.dream-card.completed h3 {
+ text-decoration: line-through;
+ color: #888888;
+}
+
+.empty-message {
+ color: #777777;
+ text-align: center;
+}
+
+.inspiration img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.inspiration-text {
+background-color: #f4d9d5;
+padding: 25px;
+margin-top: 8px;
+border-left: 6px solid #d96f68;
+text-align: center;
+}
+
+.inspiration-text h2 {
+ color: #333333;
+ font-size: 28px;
+}
+
+.inspiration-text p {
+ color: #555555;
+ font-size: 16px;
+}
+footer {
+background-color: #eee8f7;
+text-align: center;
+padding: 20px;
+color: #555555;
+}
+
+.footer-small {
+font-size: 11px;
+}
+
+@media screen and (max-width: 600px) {
+.hero-photo img {
+ width: 100%;
+}
+
+.dream-card {
+width: 80%;
+}
+
+.form-field input, .form-field select {
+width: 90%;
+}
+}
+
+.add-button {
+    background-color: #d96f68;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.add-button:hover {
+    background-color: #bd5b55;
+}
+
+.list-section {
+    background-color: #fffaf5;
+    padding: 20px;
+}

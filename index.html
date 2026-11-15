@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bucket List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+<header class="topbar">
+<a class="logo" href="#">little<span>big</span>dreams <span class="logo-star"></span></a>
+<a class="top-link" href="#my-list">My list</a>
+</header>
+
+
+<main>
+<marquee direction="right" scrollamount="10">✨ Every dream starts with a little wish! Keep dreaming, keep achieving! ✨</marquee>
+<hr>
+<section class="hero">
+<div class="hero-copy">
+<p class="eyebrow"> A LITTLE SPACE FOR BIG DREAMS</p>
+<h1>Life is short.<br><span>Make it memorable.</span></h1>
+<p class="hero-text"> Collect the places you want to see, the things you want to try, and the moments you want to make.</p>
+<a class="primary-link" href="#add-dream"> Add a dream <span>+</span></a>
+<div class="hero-note"></div>
+</div>
+
+<div class="hero-photo">
+<img src="https://i.pinimg.com/1200x/22/f0/38/22f0380aab985eb56f41870c62a2eb6f.jpg" alt="A peaceful mountain lake surrounded by mountains">
+<div class="photo-sticker"></div>
+</div>
+</section>
+
+<section class="stats-row" aria-label="Bucket list progress">
+<div>
+<p class="stat-number" id="totalCount">0</p>
+<p class="stat-label">DREAMS ADDED</p>
+</div>
+
+<div>
+<p class="stat-number" id="doneCount">0</p>
+<p class="stat-label">DREAMS DONE</p>
+</div>
+
+<div class="progress-wrap">
+<div class="progress-heading"><span>YOUR PROGRESS : </span><span id="progressText"> 0%</span>
+</div>
+
+<div class="progress-track">
+    <div class="progress-fill" id="progressFill">
+</div>
+</div>
+</div>
+</section>
+
+<section class="add-section" id="add-dream">
+<div class="section-heading">
+<br><br>
+<h2>What's on your list?</h2>
+<p>Big adventure or tiny joy — it all belongs here.</p>
+</div>
+
+<form id="dreamForm" class="dream-form" onsubmit="return addDream()">
+<div class="form-field">
+<label for="dreamName">YOUR DREAM</label>
+<input type="text" id="dreamName" placeholder="e.g. Watch the Northern Lights" maxlength="60">
+</div>
+<div class="form-field">
+<label for="dreamCategory">CATEGORY</label>
+<select id="dreamCategory">
+<option value="Travel">✈ Travel</option>
+<option value="Adventure">⛰ Adventure</option>
+<option value="Learn">📚 Learn something</option>
+<option value="Everyday">☀ Everyday joy</option>
+</select>
+</div>
+
+<button class="add-button" type="submit">+ Add to my list</button>
+</form>
+<p class="form-hint" id="formHint">Tip: You can add anything — there are no silly dreams.</p>
+<br><br>
+</section>
+
+<section class="list-section" id="my-list">
+<div class="list-heading">
+
+<div>
+<p class="eyebrow">THE GOOD STUFF</p>
+<h2>Your dream collection</h2>
+</div>
+<div class="filters" aria-label="Filter dreams">
+<button class="filter-button active" data-filter="All" type="button">All</button>
+<button class="filter-button" data-filter="Travel" type="button">Travel</button>
+<button class="filter-button" data-filter="Adventure" type="button">Adventure</button>
+<button class="filter-button" data-filter="Learn" type="button">Learn</button>
+<button class="filter-button" data-filter="Everyday" type="button">Everyday</button>
+</div>
+</div>
+
+<div class="dream-grid" id="dreamGrid"></div>
+<p class="empty-message" id="emptyMessage">Your list is waiting for its first dream. Add one above ✨</p>
+<br><br><br>
+</section>
+
+<section class="inspiration">
+<img src="https://i.pinimg.com/1200x/d2/e9/df/d2e9df85956179854ab4e95104db9a1b.jpg" alt="A winding road through a beautiful landscape">
+<div class="inspiration-text">
+<p class="eyebrow">A GENTLE REMINDER</p>
+<h2>You don't have to do it all today.</h2>
+<p>One little step is still a step towards a life full of stories.</p>
+<br><br>
+</div>
+</section>
+</main>
+
+<footer>
+<p>Made with love and a little bit of daydreaming.</p>
+<p class="footer-small"> LITTLE BIG DREAMS · YOUR PERSONAL BUCKET LIST</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
