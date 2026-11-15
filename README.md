@@ -1,7 +1,6 @@
-# bucket-list-webtech
-# Little Big Dreams
+# Bucket List
 
-A bucket list web application that allows users to add their dreams, organize them into categories, track completed goals, and monitor their overall progress.
+A bucket list web application that allows users to add their dreams, organize them into categories, track completed goals and monitor their overall progress.
 
 ## Features
 
