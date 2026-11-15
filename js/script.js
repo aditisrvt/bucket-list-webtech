@@ -8,6 +8,10 @@ const dreamGrid = document.getElementById("dreamGrid");
 const emptyMessage = document.getElementById("emptyMessage");
 const formHint = document.getElementById("formHint");
 
+function saveDreams() {
+    localStorage.setItem("dreams", JSON.stringify(dreams)); 
+}
+
 
 function getEmoji(category) {
     if (category == "Travel") {
@@ -77,9 +81,11 @@ function addDream() {
     }
 
     dreams.push({ name: name, category: category, done: false });
+    saveDreams();
 
     document.getElementById("dreamForm").reset();
     formHint.innerHTML = "Lovely! Your new dream has been added ✨";
+    saveDreams();
     displayDreams();
 
     
@@ -106,6 +112,7 @@ function deleteDream(index) {
 
     if (answer == true) {
         dreams.splice(index, 1);
+        saveDreams();
         displayDreams();
     }
 }
@@ -150,5 +157,6 @@ for (let i = 0; i < filterButtons.length; i++) {
 
 
 window.onload = function() {
+     dreams = JSON.parse(localStorage.getItem("dreams")) || [];
     displayDreams();
 };
