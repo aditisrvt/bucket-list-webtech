@@ -61,7 +61,7 @@
 <p>Big adventure or tiny joy — it all belongs here.</p>
 </div>
 
-<form id="dreamForm" class="dream-form" onsubmit="return addDream()">
+<form id="dreamForm" class="dream-form" onsubmit="addDream(event)">
 <div class="form-field">
 <label for="dreamName">YOUR DREAM</label>
 <input type="text" id="dreamName" placeholder="e.g. Watch the Northern Lights" maxlength="60">
@@ -119,6 +119,7 @@
 <p class="footer-small"> LITTLE BIG DREAMS · YOUR PERSONAL BUCKET LIST</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

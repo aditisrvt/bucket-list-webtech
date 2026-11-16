@@ -1,3 +1,8 @@
+const supabaseUrl = "https://vafuapkxrnhlgjaexwtg.supabase.co";
+const supabaseKey = "sb_publishable_nSox28GOANTL9a8TesdFNA_o3oYkn5e";
+
+const supabaseClient = window.supabase.createClient(supabaseUrl, supabaseKey);
+
 let dreams = [];
 
 let currentFilter = "All";
@@ -8,8 +13,19 @@ const dreamGrid = document.getElementById("dreamGrid");
 const emptyMessage = document.getElementById("emptyMessage");
 const formHint = document.getElementById("formHint");
 
-function saveDreams() {
-    localStorage.setItem("dreams", JSON.stringify(dreams)); 
+async function loadDreams() {
+    const { data, error } = await supabaseClient
+        .from("dreams")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+    if (error) {
+        alert("Could not load dreams: " + error.message);
+        return;
+    }
+
+    dreams = data;
+    displayDreams();
 }
 
 
@@ -69,51 +85,66 @@ function displayDreams() {
 }
 
 
-function addDream() {
+async function addDream(event) {
+    event.preventDefault();
+
     let name = dreamName.value.trim();
     let category = dreamCategory.value;
 
-    
     if (name == "") {
         alert("Please enter a dream before adding it!");
         dreamName.focus();
-        return false;
+        return;
     }
 
-    dreams.push({ name: name, category: category, done: false });
-    saveDreams();
+    const { error } = await supabaseClient
+        .from("dreams")
+        .insert([{ name: name, category: category, done: false }]);
+
+    if (error) {
+        alert(error.message);
+        return;
+    }
 
     document.getElementById("dreamForm").reset();
     formHint.innerHTML = "Lovely! Your new dream has been added ✨";
-    saveDreams();
-    displayDreams();
 
-    
-    setTimeout(function() {
-        formHint.innerHTML = "Tip: You can add anything — there are no silly dreams.";
-    }, 2500);
-
-    return false;
+    loadDreams();
 }
 
 
-function markDone(index) {
-    if (dreams[index].done == false) {
-        dreams[index].done = true;
-    } else {
-        dreams[index].done = false;
+async function markDone(index) {
+    let newStatus = !dreams[index].done;
+
+    const { error } = await supabaseClient
+        .from("dreams")
+        .update({ done: newStatus })
+        .eq("id", dreams[index].id);
+
+    if (error) {
+        alert(error.message);
+        return;
     }
-    displayDreams();
+
+    loadDreams();
 }
 
 
-function deleteDream(index) {
+async function deleteDream(index) {
     let answer = confirm("Are you sure you want to remove this dream?");
 
     if (answer == true) {
-        dreams.splice(index, 1);
-        saveDreams();
-        displayDreams();
+        const { error } = await supabaseClient
+            .from("dreams")
+            .delete()
+            .eq("id", dreams[index].id);
+
+        if (error) {
+            alert(error.message);
+            return;
+        }
+
+        loadDreams();
     }
 }
 
@@ -157,6 +188,5 @@ for (let i = 0; i < filterButtons.length; i++) {
 
 
 window.onload = function() {
-     dreams = JSON.parse(localStorage.getItem("dreams")) || [];
-    displayDreams();
+    loadDreams();
 };
