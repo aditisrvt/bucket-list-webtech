@@ -9,14 +9,16 @@ A bucket list web application that allows users to add their dreams, organize th
 - Mark dreams as completed.
 - Filter dreams by category.
 - Track total and completed dreams.
-- Save dreams using browser Local Storage.
+- Store dreams in a Supabase database.
 
 ## Technologies Used
 
 - HTML
 - CSS
 - JavaScript
-- Local Storage
+- Supabase (Database)
+- Git and GitHub
+- Vercel (Deployment)
 
 ## Project Structure
 
@@ -33,12 +35,15 @@ bucket-list-webtech/
 ## How to Run
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/aditisrvt/bucket-list-webtech.git
    ```
+
 2. Open the project folder.
 3. Open `index.html` in a web browser.
 
+
 ## Live Website
 
-[Bucket List](<https://bucket-list-webtech.vercel.app>)
+[Bucket List](https://bucket-list-webtech.vercel.app/)
